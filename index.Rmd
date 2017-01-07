@@ -41,6 +41,10 @@ When you click the **Knit** button a document will be generated that includes bo
 - 104年 <http://www.taipower.com.tw/content/new_info/new_info-b49.aspx?LinkID=9>
   
 日照量資料來源：
+
+- 96~100年 <http://mrpv2.mynet.com.tw/uploads/20140212162503-1142442397.pdf>
+- 102~105年 <http://e-service.cwb.gov.tw/HistoryDataQuery/index.jsp>
+
   
 ## 爬蟲-日照量與發電量
 
@@ -55,6 +59,12 @@ url103='http://mrpv2.mynet.com.tw/information.php?sort_id=31'
 table103=readHTMLTable(url103)
 knitr::kable(table103[[1]])
 ```
+## 爬蟲-日照量與發電量
+
+日照量方面，各測站的資料都能從中央氣象局的網站取得，因此我們先把各測站所對應的URL碼整理成一csv檔，再讓R依據此檔案一一將資料爬下來。
+
+由於R爬蟲教學影片是示範取得日照量的資料，因此這裡便不再贅述。
+
 ## 爬蟲-日照量與發電量
 
 ```{r echo=FALSE}
