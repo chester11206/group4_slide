@@ -1,7 +1,7 @@
 ---
 title: "Pecu-Group4-Slide"
 subtitle: "太陽能裝設區域分析"
-author: "Chester Her"
+author: "Group 4"
 date: "2017年1月7日"
 output: ioslides_presentation
 ---
@@ -12,15 +12,16 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## 主題簡介
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+政府開始推動再生能源發展條例以來，已經建置數個美觀上手的太陽能發電網站，然而政府提供的試算方式既不親民又不夠一目了然，需要先對太陽能有一定研究，才能較正確的填入適合該處的計算值，而且該算法仍使用去年度的試算費率。
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+因此，為了幫助一般民眾及學校等機關架設非商用太陽能發電系統，我們已事先設定好符合多數需求的系統，並以最新資料、更詳細的分區方式做計算，民眾只需觀看地圖（或選擇行政區）即可知道當地是不適合裝設。
 
-## Agenda
+## 目錄
 
 - 爬蟲-日照量與發電量  
 - 資料視覺化
 - 推測、比較與評估
+- 網頁實作
 
 ## 爬蟲-日照量與發電量
 
@@ -33,7 +34,7 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ## 爬蟲-日照量與發電量
 
-發電量資料來源：
+$$發電量資料來源：$$
 
 - 100年 <http://twpage5000.com/shinepvtech/knowledge.html>
 - 102年 <http://www.solar2money.com/solar/how_much_solar_energy.html>
@@ -42,7 +43,7 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ## 爬蟲-日照量與發電量
 
-日照量資料來源：
+$$日照量資料來源：$$
 
 - 96~100年 <http://mrpv2.mynet.com.tw/uploads/20140212162503-1142442397.pdf>
 - 102~105年 <http://e-service.cwb.gov.tw/HistoryDataQuery/index.jsp>
@@ -109,3 +110,44 @@ for(i in 2:19){
 }
 
 ```
+
+## 推測、比較與評估
+
+$$推估發電量$$
+
+
+- 以能源局及中央氣象局合作資料為推估依據
+- 每 1 峰瓩(kWp)之年發電量為：「年發電量 × 1.08(發電面板接收輻射量為測站面板的1.08倍) × 1(kWp) × 75%(系統性能比)=一年總發電度數。
+
+## 推測、比較與評估
+
+$$推測是否適合裝設$$
+
+- 以日射量推估發電量，而非用實際發電量：
+
+實際發電量中多為商用太陽能發電廠，面板的發電效能和成本高於適合一般民眾使用的。（一般面板成本約為80,000台幣/1 kWp）
+日射量分區詳細，更為貼近民眾的需求。
+僅少部分無日射量資料之縣市改成使用實際發電量推估。
+
+
+- 十年可回本則適合裝設：
+
+多數太陽能系統裝設廠商有提供十年保固，若期間有非人為因素損壞則不用擔心血本無歸。
+以雙尾學生氏Ｔ檢定將各地的年均日射量與十年可回本之年日射量做兩兩比較，並令顯著水準為0.05及0.01，結果分為適合/普通/不適合裝設。
+適合-無顯著差異，回本時間等於十年。
+普通(可自行考慮裝設)-顯著水準為0.05時，有顯著差異。
+不適合-顯著水準為0.05、0.01時，皆顯著差異。
+
+## 網頁實作
+
+我們使用Bootstrap的模板當基礎，改良網頁切換的模式，並加上地圖、圖示等展現小組主題。
+
+$$主要分成三大頁面：$$
+
+- 首頁：介紹主題、成員，另有視覺化地圖連結
+- 太陽能效益：顯示各地區的日照量、發電量與推估發電量，並給予相關之太陽能裝設建議
+- 太陽能建置：太陽能發電小知識
+
+<https://helloprince.github.io/NTU_program/>
+
+![alt text](qrcode.jpg)
