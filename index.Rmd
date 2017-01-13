@@ -149,6 +149,6 @@ $$主要分成三大頁面：$$
 - 太陽能效益：顯示各地區的日照量、發電量與推估發電量，並給予相關之太陽能裝設建議
 - 太陽能建置：太陽能發電小知識
 
-<https://helloprince.github.io/NTU_program/>
+<https://chester11206.github.io/NTU_program4/>
 
-![alt text](qrcode.jpg)
+![alt text](qr_code.jpg)
